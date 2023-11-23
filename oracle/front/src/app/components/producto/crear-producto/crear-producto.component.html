@@ -1,0 +1,86 @@
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
+
+
+  <div class="grid">
+    <div class="col-12 sm:col-6">
+        <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input type="text" pInputText formControlName="nombre" placeholder="nombreProducto"  title="nombreProducto">         
+        </div>
+    </div>
+
+    <div class="col-12 sm:col-6">
+      <div class="p-inputgroup mb-1 ">
+            <span class="p-inputgroup-addon"><i class="pi pi-wallet"></i></span>
+            <input type="text" pInputText formControlName="categoria" placeholder="categoriaProducto" title="categoriaProducto" >          
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid">
+    <div class="col-12 sm:col-6">
+        <div class="p-inputgroup mb-1">
+            <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+            <input type="text" pInputText formControlName="imagen" placeholder="imagenProducto"  title="imagenProducto">         
+        </div>
+    </div>
+
+    <div class="col-12 sm:col-6">
+      <div class="p-inputgroup mb-1 ">
+            <span class="p-inputgroup-addon"><i class="pi pi-bookmark"></i></span>
+            <input type="text" pInputText formControlName="precio" placeholder="precioProducto" title="precioProducto" >          
+      </div>
+    </div>
+
+    <div class="col-12 sm:col-6">
+      <div class="p-inputgroup mb-1 ">
+            <span class="p-inputgroup-addon"><i class="pi pi-bookmark"></i></span>
+            <input type="text" pInputText formControlName="marca" placeholder="marcaProducto" title="marcaProducto" >          
+      </div>
+    </div>
+
+    <div class="col-12 sm:col-6">
+      <div class="p-inputgroup mb-1 ">
+            <span class="p-inputgroup-addon"><i class="pi pi-bookmark"></i></span>
+            <input type="text" pInputText formControlName="descuento" placeholder="descuentoProducto" title="descuentoProducto" >          
+      </div>
+    </div>
+
+    <div class="col-12 sm:col-6">
+      <div class="p-inputgroup mb-1 ">
+            <span class="p-inputgroup-addon"><i class="pi pi-bookmark"></i></span>
+            <input type="text" pInputText formControlName="envio" placeholder="envioProducto" title="envioProducto" >          
+      </div>
+    </div>
+
+    <div class="col-12 sm:col-6">
+      <div class="p-inputgroup mb-1 ">
+            <span class="p-inputgroup-addon"><i class="pi pi-bookmark"></i></span>
+            <input type="text" pInputText formControlName="descripcion" placeholder="descripcionProducto" title="descripcionProducto" >          
+      </div>
+    </div>
+
+
+
+  </div>
+
+<div class="text-right">
+
+    <div class="col-12 sm:col-6">
+        <div class="p-inputgroup mb-1 ">
+              <span class="p-inputgroup-addon"><i class="pi pi-comments"></i></span>
+              <input type="text" pInputText formControlName="precioVenta" placeholder="precioVentaProducto" title="precioVentaProducto" >          
+        </div>
+
+        <button pButton pRipple  type="submit"  icon="pi pi-check" label="Enviar" 
+        [disabled]="!form.valid" class="mt-4 mr-2">crear
+        </button>
+
+        <button pButton pRipple  type="button"  icon="pi pi-times" label="Cancelar" 
+        class=" mr-2" (click)="cancel()">cancelar
+        </button>
+    </div>
+
+</div>
+</form>

@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card flex justify-content-center">
+        <p-button [routerLink]="['/crearClientes']" label="agregar cliente"></p-button>
+    </div>
+  <p-table [value]="clientes" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>id</th>
+              <th>Nombre</th>
+              <th>Direccion</th>
+              <th>telefono</th>
+              <th>correo</th>
+              <th>password</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-clientes>
+          <tr>
+              <td>{{ clientes.id }}</td>
+              <td>{{ clientes.nombre }}</td>
+              <td>{{ clientes.direccion }}</td>
+              <td>{{ clientes.telefono }}</td>
+              <td>{{ clientes.correo }}</td>
+              <td>{{ clientes.password }}</td>
+              <td>
+                <button 
+                    pButton 
+                    pRipple
+                    icon="pi pi-print"
+                    class="bg-cyan-600  mr-1"
+                    (click)="imprimir(clientes.id)">
+                </button>
+
+                <a 
+                pButton 
+                pRipple
+                icon="pi pi-sync"
+                class="bg-cyan-600  mr-1"
+                [routerLink]="['/clientes/edit', clientes.id]">
+                </a>
+
+                <button 
+                type="button"
+                 pButton 
+                 pRipple
+                 icon="pi pi-eraser"
+                 class="bg-cyan-600  mr-1"
+                 (click)="eliminar(clientes.id)">
+                </button>
+
+
+            </td>
+          </tr>
+      </ng-template>
+  </p-table>
+
+</div>

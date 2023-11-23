@@ -1,0 +1,43 @@
+<h1>Tabla de Productos</h1>
+
+<div class="card">
+    <div class="card flex justify-content-center">
+        <p-button [routerLink]="['/crearProducto']" label="agregar producto"></p-button>
+    </div>
+  <p-table [value]="producto" [tableStyle]="{'min-width': '60rem'}">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>id</th>
+              <th>Nombre</th>
+              <th>imagen</th>
+              <th>precio de compra</th>
+              <th>descripcion</th>
+              <th>categoria</th>
+              <th>descuento</th>
+              <th>envio</th>
+              <th>marca</th>
+              <th>precio de venta</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-producto>
+          <tr>
+              <td>{{producto.id}}</td>
+              <td>{{producto.nombre}}</td>
+              <td><img [src]="producto.imagen" [alt]="producto.name" width="100" class="shadow-4" /></td>
+              <td>{{producto.precio | currency:'USD'}}</td>
+              <td>{{producto.descripcion}}</td>
+              <td>{{producto.categoria}}</td>
+              <td>{{producto.descuento}}%</td>
+              <td>{{producto.envio}}</td>
+              <td>{{producto.marca}}</td>
+              <td>{{producto.precioVenta}}</td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+          <div class="flex align-items-center justify-content-between">
+              In total there are {{producto ? producto.length : 0 }} products.
+          </div>
+      </ng-template>
+  </p-table>
+</div>
+

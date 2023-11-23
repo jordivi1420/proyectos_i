@@ -1,0 +1,40 @@
+h1 {
+    color: rgb(20, 219, 40);
+}
+
+main {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr  1fr;
+    grid-template-areas:
+    "header header  header  header  header"
+    "aside  section section section section"
+    "footer footer  footer  footer  footer";
+    
+    row-gap: 0;
+    column-gap: 0;
+    grid-template-rows: 20% 70% 10%;
+    height: 98vh;
+    
+}
+
+header {
+    grid-area: header;
+
+    background-color: rgb(10, 141, 173);
+}
+
+section {
+    grid-area: section;
+    
+}
+
+aside {
+    grid-area: aside;
+    
+}
+
+footer {
+    grid-area: footer;
+  
+}
